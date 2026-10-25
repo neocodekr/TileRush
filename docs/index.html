@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>TileRush</title>
-    <link rel="icon" type="image/png" href="StreamingAssets/TileRushPromo/tilerush-icon.png">
+    <link rel="shortcut icon" href="StreamingAssets/TileRushPromo/tilerush-icon.png">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
   </head>
@@ -14,7 +14,7 @@
         <canvas id="unity-canvas" width="600" height="760" tabindex="-1"></canvas>
         <div id="unity-loading-container">
           <div id="unity-loading-bar">
-            <div id="unity-logo"></div>
+            <img id="tilerush-loading-logo" src="StreamingAssets/TileRushPromo/tilerush-icon.png" alt="TileRush">
             <div id="unity-progress-bar-empty">
               <div id="unity-progress-bar-full"></div>
             </div>
@@ -26,7 +26,7 @@
     <script>
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js?v=19fd00582bd593cd94a26fc5f72611");
+          navigator.serviceWorker.register("ServiceWorker.js?v=1496a64002cc93cd94a26fc5f72611");
         }
       });
 
@@ -61,12 +61,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=19fd00582bd593cd94a26fc5f72611";
+      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=1496a64002cc93cd94a26fc5f72611";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=19fd00582bd593cd94a26fc5f72611",
-        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=19fd00582bd593cd94a26fc5f72611",
-        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=19fd00582bd593cd94a26fc5f72611",
+        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=1496a64002cc93cd94a26fc5f72611",
+        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=1496a64002cc93cd94a26fc5f72611",
+        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=1496a64002cc93cd94a26fc5f72611",
         streamingAssetsUrl: "StreamingAssets",
 
         // If you have a custom web site structure, or want to place multiple Unity build instances on the same page,
