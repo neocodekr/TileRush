@@ -6,7 +6,7 @@
     <title>TileRush</title>
     <link rel="icon" type="image/png" sizes="512x512" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
     <link rel="apple-touch-icon" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
-    <link rel="stylesheet" href="TemplateData/style.css?v=167b4fb3fa44a8233274f583a26fc5f72611-surfx3">
+    <link rel="stylesheet" href="TemplateData/style.css?v=167b4fb3fa44a8233274f583a26fc5f72611-surfx4">
     <link rel="manifest" href="manifest.webmanifest?v=74f58368">
   </head>
   <body>
@@ -15,7 +15,7 @@
         <div class="surfx-wave surfx-wave-back"></div>
         <div class="surfx-wave surfx-wave-front"></div>
         <img class="surfx-surfer" src="StreamingAssets/TileRushPromo/surfx-surfer.svg" alt="">
-        <a class="surfx-logo" href="https://www.surfx-protocol.com" target="_blank" rel="noopener noreferrer" aria-label="SurfX website">
+        <a class="surfx-logo" href="https://www.surfx-protocol.com" target="_blank" rel="noopener noreferrer" aria-label="SurfX website" aria-disabled="true" tabindex="-1">
           <svg viewBox="0 0 54 40" aria-hidden="true" focusable="false"><path d="M3 25c9 0 9-16 17-16s8 17 15 17c5 0 7-7 16-7M3 34c9 0 10-7 17-7 8 0 8 7 16 7 7 0 9-6 15-6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>Surf<span class="surfx-x">X</span></span>
         </a>
@@ -39,11 +39,21 @@
         if (!scene) return;
         scene.classList.toggle("is-visible", !!visible);
         scene.setAttribute("aria-hidden", visible ? "false" : "true");
+        var logo = scene.querySelector(".surfx-logo");
+        if (logo) {
+          logo.tabIndex = visible ? 0 : -1;
+          logo.setAttribute("aria-disabled", visible ? "false" : "true");
+        }
       };
+
+      document.querySelector(".surfx-logo").addEventListener("click", function (event) {
+        if (!document.getElementById("surfx-scene").classList.contains("is-visible"))
+          event.preventDefault();
+      });
 
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js?v=167b4fb3fa44a8233274f583a26fc5f72611-surfx3");
+          navigator.serviceWorker.register("ServiceWorker.js?v=167b4fb3fa44a8233274f583a26fc5f72611-surfx4");
         }
       });
 
