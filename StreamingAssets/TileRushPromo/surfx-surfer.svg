@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 250" role="img" aria-label="Cartoon surfer riding a wave">
+  <g stroke="#174779" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 201c39-9 85-9 123-12 42-3 75-14 101-30-10 31-36 53-84 62-53 10-99 1-140-20Z" fill="#56eac8"/>
+    <path d="M46 200c48 7 112 5 176-18" fill="none" stroke="#d9fff4" stroke-width="5"/>
+    <path d="M103 169 97 195l24 3 18-31" fill="#146873"/>
+    <path d="m143 165 20 27 24-6-26-38" fill="#146873"/>
+    <path d="m93 194 39 5-6 12-43-4Z" fill="#123d66"/>
+    <path d="m159 190 31-9 11 10-36 13Z" fill="#123d66"/>
+    <path d="M97 116c-9 22-7 42 4 56 18 5 42 5 61-10l-6-42c-9-15-37-22-59-4Z" fill="#103f51"/>
+    <path d="m105 141 36 10" fill="none" stroke="#49e2c0" stroke-width="7"/>
+    <path d="M100 121c-17 3-24 18-35 27l-28 3" fill="none" stroke="#edaa75" stroke-width="13"/>
+    <path d="m38 151-13-10m13 10-15 2m15-2-7 11" fill="none" stroke="#edaa75" stroke-width="6"/>
+    <path d="M153 123c20 2 35-9 50-27l24-9" fill="none" stroke="#edaa75" stroke-width="13"/>
+    <path d="m225 88 13-12m-13 12 17-1m-17 1 11 10" fill="none" stroke="#edaa75" stroke-width="6"/>
+    <path d="M113 87c-4 16 3 30 18 32 18 2 31-12 30-29-1-17-13-29-28-29-15 0-26 12-20 26Z" fill="#f6bd89"/>
+    <path d="M108 80c-1-27 23-43 47-31 12 6 18 15 14 31-16-6-32-7-50 4Z" fill="#312d50"/>
+    <path d="M105 82c19-10 43-12 64-5l-3 10c-21-6-41-5-59 5Z" fill="#56eac8"/>
+    <path d="M119 87c7-4 16-4 22 0m13 0 10 2" fill="none" stroke="#174779" stroke-width="4"/>
+    <circle cx="134" cy="90" r="2" fill="#174779" stroke="none"/>
+    <path d="M144 99c4 4 8 4 12 0" fill="none" stroke="#af5c4e" stroke-width="3"/>
+  </g>
+  <g fill="#fff" opacity=".92">
+    <path d="m11 208 11-9 5 14 11 3-16 5Z"/>
+    <path d="m225 198 8-17 4 15 18-5-13 13Z"/>
+    <circle cx="260" cy="175" r="5"/><circle cx="17" cy="180" r="4"/>
+  </g>
+</svg>

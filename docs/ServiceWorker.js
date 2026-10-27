@@ -1,4 +1,4 @@
-const cacheName = "TileRush-0365af01e6e1885e3493cd94a26fc5f72611-icon-74f58368";
+const cacheName = "TileRush-167b4fb3fa44a8233274f583a26fc5f72611-surfx1";
 const contentToCache = [
     "Build/WebGLRelease.loader.js",
     "Build/WebGLRelease.framework.js.unityweb",
@@ -51,7 +51,7 @@ self.addEventListener('fetch', function (e) {
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => (k.startsWith('DefaultCompany-TileMatch-') || k.startsWith('TileRush-')) && k !== cacheName).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k => k.startsWith('TileRush-') && k !== cacheName).map(k => caches.delete(k)));
     await self.clients.claim();
   })());
 });
