@@ -7,9 +7,9 @@
     "theme_color": "#000",
     "description": "",
     "icons": [{
-      "src": "StreamingAssets/TileRushPromo/tilerush-icon.png",
-      "sizes": "144x144",
+      "src": "StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368",
+      "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }]
   }

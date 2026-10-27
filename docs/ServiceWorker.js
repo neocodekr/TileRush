@@ -1,4 +1,4 @@
-const cacheName = "TileRush-0365af01e6e1885e3493cd94a26fc5f72611";
+const cacheName = "TileRush-0365af01e6e1885e3493cd94a26fc5f72611-icon-74f58368";
 const contentToCache = [
     "Build/WebGLRelease.loader.js",
     "Build/WebGLRelease.framework.js.unityweb",
