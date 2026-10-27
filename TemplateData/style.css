@@ -18,8 +18,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #6ac4f3; }
 /* SurfX lives in the side gutters and never covers the game canvas. */
 #surfx-scene { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 #surfx-scene::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 16% 17%, rgba(255,255,255,.4) 0 2px, transparent 3px), radial-gradient(circle at 81% 27%, rgba(255,255,255,.42) 0 4px, transparent 5px), radial-gradient(circle at 72% 40%, rgba(255,255,255,.28) 0 3px, transparent 4px); background-size: 290px 220px, 440px 320px, 360px 280px; opacity: .75; }
-.surfx-wave { position: absolute; left: -1200px; right: -1200px; bottom: -2px; height: 39%; min-height: 230px; background: url('../StreamingAssets/TileRushPromo/surfx-waves.svg') repeat-x left bottom / 1200px 100%; animation: surfx-wave-flow 23s linear infinite paused; filter: drop-shadow(0 -5px 8px rgba(255,255,255,.3)); }
-#surfx-scene.is-visible .surfx-wave { animation-play-state: running; }
+.surfx-wave { position: absolute; left: -1200px; right: -1200px; bottom: -2px; height: 39%; min-height: 230px; background: url('../StreamingAssets/TileRushPromo/surfx-waves.svg') repeat-x left bottom / 1200px 100%; animation: surfx-wave-flow 23s linear infinite; filter: drop-shadow(0 -5px 8px rgba(255,255,255,.3)); }
 .surfx-wave-back { bottom: 9%; opacity: .4; transform: scaleY(.72); transform-origin: bottom; animation-duration: 32s; animation-direction: reverse; }
 .surfx-wave-front { opacity: .94; }
 .surfx-surfer { position: absolute; z-index: 2; right: clamp(80px, 12vw, 230px); bottom: clamp(110px, 17vh, 190px); width: clamp(145px, 16vw, 260px); height: auto; filter: drop-shadow(0 13px 7px rgba(21,88,141,.25)); animation: surfx-surf 3.3s ease-in-out infinite; }
