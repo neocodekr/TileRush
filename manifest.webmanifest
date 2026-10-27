@@ -1,0 +1,15 @@
+{
+    "name": "TileRush",
+    "short_name": "TileRush",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#1F1F20",
+    "theme_color": "#000",
+    "description": "",
+    "icons": [{
+      "src": "StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }]
+  }
