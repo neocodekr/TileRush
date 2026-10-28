@@ -1,6 +1,7 @@
 /* Reserve the actual install banner height below the Unity canvas on mobile. */
 @media (max-width: 900px) {
   html.tilerush-promo-visible #unity-container {
+    top: 0;
     bottom: var(--tilerush-promo-height, 0px);
     height: auto;
   }
