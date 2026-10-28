@@ -5,6 +5,7 @@ body { padding: 0; margin: 0 }
 #unity-loading-container { position: absolute; width: 100%; height: 100%; display: block; background: radial-gradient(circle at 50% 35%, #fff 0%, #e5f5ff 70%, #caeaff 100%); }
 #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 #tilerush-loading-logo { display: block; width: min(56vw, 287px); height: auto; object-fit: contain; margin: auto; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .12)); }
+html:not(.game-ready) #tilerush-install-banner { display: none !important; }
 #unity-progress-bar-empty { margin-left: auto; margin-right: auto; width: 141px; height: 12px; margin-top: 10px; background: #c4dded; border-radius: 8px; box-shadow: inset 0 1px 3px rgba(27, 72, 120, .25); overflow: hidden; }
 #unity-progress-bar-full { width: 0%; height: 12px; background: linear-gradient(90deg, #23b3e4, #315aa9); border-radius: 8px; }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
