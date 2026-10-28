@@ -1,4 +1,4 @@
-const cacheName = "TileRushRoot-a567ab26473c929aa3b1b8bece43b7b273587563-mobilelayout2";
+const cacheName = "TileRushRoot-5e76e6db04171af1e26f2a188003f87c04631552-mobilelayout2";
 const contentToCache = [
     "webgl/WebGLRelease.loader.js",
     "webgl/WebGLRelease.framework.js.unityweb",
