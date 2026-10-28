@@ -1,4 +1,4 @@
-const cacheName = "TileRushDocs-8df34f96343576a-ranking-banner1-surfx-loading1";
+const cacheName = "TileRushDocs-8df34f96343576a-ranking-banner1-rank-refresh1";
 const contentToCache = [
     "Build/WebGLRelease.loader.js",
     "Build/WebGLRelease.framework.js.unityweb",
@@ -22,6 +22,8 @@ self.addEventListener('install', function (e) {
 });
 
 self.addEventListener('fetch', function (e) {
+  // Firebase rankings and authentication must always reach the server.
+  if (new URL(e.request.url).origin !== self.location.origin) return;
   if (e.request.mode === 'navigate') {
     e.respondWith((async function () {
       try {
