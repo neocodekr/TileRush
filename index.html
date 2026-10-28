@@ -6,7 +6,7 @@
     <title>TileRush</title>
     <link rel="icon" type="image/png" sizes="512x512" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
     <link rel="apple-touch-icon" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
-    <link rel="stylesheet" href="TemplateData/style.css?v=1e3e952d11453c7a7525c559cd366a6ac23b874f-surfx4-splash2">
+    <link rel="stylesheet" href="TemplateData/style.css?v=862a0a98f93c734dc56d5cb7482dbfbb0ff09226-surfx4-splash2">
     <link rel="manifest" href="manifest.webmanifest?v=74f58368">
   </head>
   <body>
@@ -24,7 +24,7 @@
         <canvas id="unity-canvas" width="600" height="760" tabindex="-1"></canvas>
         <div id="unity-loading-container">
           <div id="unity-loading-bar">
-            <img id="tilerush-loading-logo" src="StreamingAssets/TileRushPromo/neocode-logo.png?v=splash2" alt="NEOCODE">
+            <img id="tilerush-loading-logo" src="StreamingAssets/TileRushPromo/neocode-logo.png?v=d822f52c4e8b" alt="NEOCODE">
             <div id="unity-progress-bar-empty">
               <div id="unity-progress-bar-full"></div>
             </div>
@@ -59,7 +59,7 @@
 
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js?v=1e3e952d11453c7a7525c559cd366a6ac23b874f-surfx4-splash2");
+          navigator.serviceWorker.register("ServiceWorker.js?v=862a0a98f93c734dc56d5cb7482dbfbb0ff09226-surfx4-splash2");
         }
       });
 
@@ -94,12 +94,12 @@
       }
 
       var buildUrl = "webgl";
-      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=1e3e952d11453c7a7525c559cd366a6ac23b874f";
+      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=862a0a98f93c734dc56d5cb7482dbfbb0ff09226";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=1e3e952d11453c7a7525c559cd366a6ac23b874f",
-        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=1e3e952d11453c7a7525c559cd366a6ac23b874f",
-        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=1e3e952d11453c7a7525c559cd366a6ac23b874f",
+        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=862a0a98f93c734dc56d5cb7482dbfbb0ff09226",
+        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=862a0a98f93c734dc56d5cb7482dbfbb0ff09226",
+        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=862a0a98f93c734dc56d5cb7482dbfbb0ff09226",
         streamingAssetsUrl: "StreamingAssets",
 
         // If you have a custom web site structure, or want to place multiple Unity build instances on the same page,
