@@ -1,10 +1,12 @@
-const cacheName = "TileRush-c8d1b2da655601e763553577ec1a387667311e48-surfx4-splash2";
+const cacheName = "TileRushDocs-5e106aa38d0c5eec-surfx-loading1";
 const contentToCache = [
     "Build/WebGLRelease.loader.js",
     "Build/WebGLRelease.framework.js.unityweb",
     "Build/WebGLRelease.data.unityweb",
     "Build/WebGLRelease.wasm.unityweb",
-    "TemplateData/style.css"
+    "TemplateData/style.css",
+    "StreamingAssets/TileRushPromo/banner-layout.css",
+    "StreamingAssets/TileRushPromo/banner-layout.js"
 
 ];
 
@@ -36,7 +38,8 @@ self.addEventListener('fetch', function (e) {
     return;
   }
     e.respondWith((async function () {
-      let response = await caches.match(e.request);
+      const currentCache = await caches.open(cacheName);
+      let response = await currentCache.match(e.request);
       console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
       if (response) { return response; }
 
@@ -51,7 +54,9 @@ self.addEventListener('fetch', function (e) {
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k.startsWith('TileRush-') && k !== cacheName).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k => k !== cacheName &&
+      (k.startsWith('TileRushRoot-') || k.startsWith('TileRushDocs-') || k.startsWith('TileRush-')))
+      .map(k => caches.delete(k)));
     await self.clients.claim();
   })());
 });

@@ -1,4 +1,4 @@
-const cacheName = "TileRushRoot-20162bf90160194a6ed51c07560967e8d3846425-mobilelayout2";
+const cacheName = "TileRushRoot-5e106aa38d0c5eec-surfx-loading1";
 const contentToCache = [
     "webgl/WebGLRelease.loader.js",
     "webgl/WebGLRelease.framework.js.unityweb",
@@ -38,7 +38,8 @@ self.addEventListener('fetch', function (e) {
     return;
   }
     e.respondWith((async function () {
-      let response = await caches.match(e.request);
+      const currentCache = await caches.open(cacheName);
+      let response = await currentCache.match(e.request);
       console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
       if (response) { return response; }
 
@@ -53,7 +54,9 @@ self.addEventListener('fetch', function (e) {
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k.startsWith('TileRushRoot-') && k !== cacheName).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k => k !== cacheName &&
+      (k.startsWith('TileRushRoot-') || k.startsWith('TileRushDocs-') || k.startsWith('TileRush-')))
+      .map(k => caches.delete(k)));
     await self.clients.claim();
   })());
 });

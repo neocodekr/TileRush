@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>TileRush</title>
     <link rel="icon" type="image/png" sizes="512x512" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
     <link rel="apple-touch-icon" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
-    <link rel="stylesheet" href="TemplateData/style.css?v=20162bf90160194a6ed51c07560967e8d3846425-surfx4-splash2">
-    <link rel="stylesheet" href="StreamingAssets/TileRushPromo/banner-layout.css?v=mobilelayout2">
+    <link rel="stylesheet" href="TemplateData/style.css?v=5e106aa38d0c5eec-surfx-loading1">
+    <link rel="stylesheet" href="StreamingAssets/TileRushPromo/banner-layout.css?v=5e106aa38d0c5eec-surfx-loading1">
     <link rel="manifest" href="manifest.webmanifest?v=74f58368">
-    <script defer src="StreamingAssets/TileRushPromo/banner-layout.js?v=mobilelayout1"></script>
+    <script defer src="StreamingAssets/TileRushPromo/banner-layout.js?v=5e106aa38d0c5eec-surfx-loading1"></script>
   </head>
   <body>
     <div id="unity-container">
@@ -61,7 +62,7 @@
 
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js?v=20162bf90160194a6ed51c07560967e8d3846425-mobilelayout2");
+          navigator.serviceWorker.register("ServiceWorker.js?v=5e106aa38d0c5eec-surfx-loading1");
         }
       });
 
@@ -96,12 +97,12 @@
       }
 
       var buildUrl = "webgl";
-      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=20162bf90160194a6ed51c07560967e8d3846425";
+      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=5e106aa38d0c5eec";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=20162bf90160194a6ed51c07560967e8d3846425",
-        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=20162bf90160194a6ed51c07560967e8d3846425",
-        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=20162bf90160194a6ed51c07560967e8d3846425",
+        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=5e106aa38d0c5eec",
+        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=5e106aa38d0c5eec",
+        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=5e106aa38d0c5eec",
         streamingAssetsUrl: "StreamingAssets",
 
         // If you have a custom web site structure, or want to place multiple Unity build instances on the same page,
@@ -110,8 +111,8 @@
         fullscreenElementID: "unity-fullscreen-container",
 
         companyName: "DefaultCompany",
-        productName: "TileRush",
-        productVersion: "1.0.0",
+        productName: "Tile Rush",
+        productVersion: "1.0.3",
         showBanner: unityShowBanner,
         // errorHandler: function(err, url, line) {
         //    alert("error " + err + " occurred at line " + line);

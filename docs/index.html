@@ -3,11 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>TileRush</title>
     <link rel="icon" type="image/png" sizes="512x512" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
     <link rel="apple-touch-icon" href="StreamingAssets/TileRushPromo/tilerush-icon.png?v=74f58368">
-    <link rel="stylesheet" href="TemplateData/style.css?v=c8d1b2da655601e763553577ec1a387667311e48-surfx4-splash2">
+    <link rel="stylesheet" href="TemplateData/style.css?v=5e106aa38d0c5eec-surfx-loading1">
+    <link rel="stylesheet" href="StreamingAssets/TileRushPromo/banner-layout.css?v=5e106aa38d0c5eec-surfx-loading1">
     <link rel="manifest" href="manifest.webmanifest?v=74f58368">
+    <script defer src="StreamingAssets/TileRushPromo/banner-layout.js?v=5e106aa38d0c5eec-surfx-loading1"></script>
   </head>
   <body>
     <div id="unity-container">
@@ -35,8 +38,6 @@
     </div>
     <script>
       window.tileRushSetSurfXVisible = function (visible) {
-        var loading = document.getElementById("unity-loading-container");
-        if (loading) loading.style.display = "none";
         var scene = document.getElementById("surfx-scene");
         if (!scene) return;
         scene.classList.toggle("is-visible", !!visible);
@@ -48,6 +49,12 @@
         }
       };
 
+      window.tileRushLoadingFinished = function () {
+        var loading = document.getElementById("unity-loading-container");
+        if (loading) loading.style.display = "none";
+        document.documentElement.classList.add("game-ready");
+      };
+
       document.querySelector(".surfx-logo").addEventListener("click", function (event) {
         if (!document.getElementById("surfx-scene").classList.contains("is-visible"))
           event.preventDefault();
@@ -55,7 +62,7 @@
 
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js?v=c8d1b2da655601e763553577ec1a387667311e48-surfx4-splash2");
+          navigator.serviceWorker.register("ServiceWorker.js?v=5e106aa38d0c5eec-surfx-loading1");
         }
       });
 
@@ -90,12 +97,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=c8d1b2da655601e763553577ec1a387667311e48";
+      var loaderUrl = buildUrl + "/WebGLRelease.loader.js?v=5e106aa38d0c5eec";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=c8d1b2da655601e763553577ec1a387667311e48",
-        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=c8d1b2da655601e763553577ec1a387667311e48",
-        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=c8d1b2da655601e763553577ec1a387667311e48",
+        dataUrl: buildUrl + "/WebGLRelease.data.unityweb?v=5e106aa38d0c5eec",
+        frameworkUrl: buildUrl + "/WebGLRelease.framework.js.unityweb?v=5e106aa38d0c5eec",
+        codeUrl: buildUrl + "/WebGLRelease.wasm.unityweb?v=5e106aa38d0c5eec",
         streamingAssetsUrl: "StreamingAssets",
 
         // If you have a custom web site structure, or want to place multiple Unity build instances on the same page,
@@ -104,8 +111,8 @@
         fullscreenElementID: "unity-fullscreen-container",
 
         companyName: "DefaultCompany",
-        productName: "TileRush",
-        productVersion: "1.0.0",
+        productName: "Tile Rush",
+        productVersion: "1.0.3",
         showBanner: unityShowBanner,
         // errorHandler: function(err, url, line) {
         //    alert("error " + err + " occurred at line " + line);

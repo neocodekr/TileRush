@@ -3,8 +3,9 @@ body { padding: 0; margin: 0 }
 #unity-fullscreen-container { position: relative; width: 100%; height: 100%; }
 #unity-canvas { position: absolute; width: 100%; height: 100%; background: #1F1F20 }
 #unity-loading-container { position: absolute; width: 100%; height: 100%; display: block; background: radial-gradient(circle at 50% 35%, #fff 0%, #e5f5ff 70%, #caeaff 100%); }
-#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-#tilerush-loading-logo { display: block; width: min(84vw, 430px); height: auto; object-fit: contain; margin: auto; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .12)); }
+#unity-loading-bar { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+#tilerush-loading-logo { display: block; width: min(56vw, 287px); height: auto; object-fit: contain; margin: 0; mix-blend-mode: darken; }
+html:not(.game-ready) #tilerush-install-banner { display: none !important; }
 #unity-progress-bar-empty { margin-left: auto; margin-right: auto; width: 141px; height: 12px; margin-top: 10px; background: #c4dded; border-radius: 8px; box-shadow: inset 0 1px 3px rgba(27, 72, 120, .25); overflow: hidden; }
 #unity-progress-bar-full { width: 0%; height: 12px; background: linear-gradient(90deg, #23b3e4, #315aa9); border-radius: 8px; }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
@@ -15,8 +16,10 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #6ac4f3; }
 #unity-fullscreen-container { flex: none; width: 100%; height: 100%; overflow: hidden; }
 @media (min-aspect-ratio: 9/16) { #unity-fullscreen-container { width: min(100vw, 56.25vh); height: min(100vh, 177.7778vw); box-shadow: 0 0 36px rgba(22, 60, 111, .25); } }
 
-/* SurfX lives in the side gutters and never covers the game canvas. */
-#surfx-scene { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+/* The Unity game toggles SurfX art for lobby and menu screens after loading. */
+#surfx-scene { display: none; position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+#surfx-scene.is-visible { display: block; }
+html:not(.tilerush-promo-visible) #surfx-scene { display: none !important; }
 #surfx-scene::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 16% 17%, rgba(255,255,255,.4) 0 2px, transparent 3px), radial-gradient(circle at 81% 27%, rgba(255,255,255,.42) 0 4px, transparent 5px), radial-gradient(circle at 72% 40%, rgba(255,255,255,.28) 0 3px, transparent 4px); background-size: 290px 220px, 440px 320px, 360px 280px; opacity: .75; }
 .surfx-wave { position: absolute; left: -1200px; right: -1200px; bottom: -2px; height: 39%; min-height: 230px; background: url('../StreamingAssets/TileRushPromo/surfx-waves.svg') repeat-x left bottom / 1200px 100%; animation: surfx-wave-flow 23s linear infinite; filter: drop-shadow(0 -5px 8px rgba(255,255,255,.3)); }
 .surfx-wave-back { bottom: 9%; opacity: .4; transform: scaleY(.72); transform-origin: bottom; animation-duration: 32s; animation-direction: reverse; }
@@ -34,4 +37,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #6ac4f3; }
 @keyframes surfx-wave-flow { from { background-position-x: 0; } to { background-position-x: -1200px; } }
 @keyframes surfx-surf { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-15px) rotate(1deg); } }
 @media (max-aspect-ratio: 1/1) { #surfx-scene { z-index: 2; } .surfx-wave { opacity: .18; } .surfx-logo { top: 72px; right: 10px; padding: 3px 7px 8px; font-size: 29px; letter-spacing: -2px; -webkit-text-stroke-width: 1px; } .surfx-logo svg { width: 26px; } .surfx-logo::after { left: 42px; right: 6px; bottom: 1px; border-bottom-width: 3px; } .surfx-surfer { right: 12px; bottom: 95px; width: 88px; } }
-@media (prefers-reduced-motion: reduce) { .surfx-wave, .surfx-surfer { animation: none; } }
+
+/* Keep the waves and surfer visible while Unity loads, below the centered splash logo. */
+html:not(.game-ready) #surfx-scene { display: block !important; z-index: 2; }
+html:not(.game-ready) .surfx-logo { display: none; }
+html:not(.game-ready) .surfx-wave { height: 24%; min-height: 150px; }
+html:not(.game-ready) .surfx-wave-back { bottom: 2%; opacity: .32; }
+html:not(.game-ready) .surfx-wave-front { opacity: .8; }
+html:not(.game-ready) .surfx-surfer { right: max(16px, calc(50vw - 240px)); bottom: clamp(20px, 5vh, 55px); width: clamp(95px, 12vw, 175px); }
