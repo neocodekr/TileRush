@@ -11,3 +11,5 @@ python -m http.server 8770 --directory docs
 Open `http://localhost:8770/` in a browser. The game uses the live Firebase and Photon services for matchmaking.
 
 The Unity source project and local credentials are not included in this WebGL distribution commit.
+The authoritative local Unity project for this deployment is `D:\source\TileMatching`.
+`D:\source\TileMatch` is only the GitHub Pages checkout; do not build Unity from it.
