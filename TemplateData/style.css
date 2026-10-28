@@ -16,8 +16,9 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #6ac4f3; }
 #unity-fullscreen-container { flex: none; width: 100%; height: 100%; overflow: hidden; }
 @media (min-aspect-ratio: 9/16) { #unity-fullscreen-container { width: min(100vw, 56.25vh); height: min(100vh, 177.7778vw); box-shadow: 0 0 36px rgba(22, 60, 111, .25); } }
 
-/* SurfX lives in the side gutters and never covers the game canvas. */
-#surfx-scene { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+/* The Unity game toggles SurfX art for lobby and menu screens only. */
+#surfx-scene { display: none; position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+#surfx-scene.is-visible { display: block; }
 #surfx-scene::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 16% 17%, rgba(255,255,255,.4) 0 2px, transparent 3px), radial-gradient(circle at 81% 27%, rgba(255,255,255,.42) 0 4px, transparent 5px), radial-gradient(circle at 72% 40%, rgba(255,255,255,.28) 0 3px, transparent 4px); background-size: 290px 220px, 440px 320px, 360px 280px; opacity: .75; }
 .surfx-wave { position: absolute; left: -1200px; right: -1200px; bottom: -2px; height: 39%; min-height: 230px; background: url('../StreamingAssets/TileRushPromo/surfx-waves.svg') repeat-x left bottom / 1200px 100%; animation: surfx-wave-flow 23s linear infinite; filter: drop-shadow(0 -5px 8px rgba(255,255,255,.3)); }
 .surfx-wave-back { bottom: 9%; opacity: .4; transform: scaleY(.72); transform-origin: bottom; animation-duration: 32s; animation-direction: reverse; }
