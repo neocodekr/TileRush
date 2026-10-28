@@ -1,10 +1,12 @@
-const cacheName = "TileRushRoot-6d0342d78be33871b03ecf63bb80211e1cdae87e-surfx4-splash2";
+const cacheName = "TileRushRoot-6d0342d78be33871b03ecf63bb80211e1cdae87e-mobilelayout1";
 const contentToCache = [
     "webgl/WebGLRelease.loader.js",
     "webgl/WebGLRelease.framework.js.unityweb",
     "webgl/WebGLRelease.data.unityweb",
     "webgl/WebGLRelease.wasm.unityweb",
-    "TemplateData/style.css"
+    "TemplateData/style.css",
+    "StreamingAssets/TileRushPromo/banner-layout.css",
+    "StreamingAssets/TileRushPromo/banner-layout.js"
 
 ];
 
