@@ -1,9 +1,7 @@
-const cacheName = "TileRushRoot-b622478d917ccef9-surfx-loading1";
+const cacheName = "TileRushRoot-b622478d917ccef9-lazy-assets1";
 const contentToCache = [
-    "webgl/WebGLRelease.loader.js",
-    "webgl/WebGLRelease.framework.js.unityweb",
-    "webgl/WebGLRelease.data.unityweb",
-    "webgl/WebGLRelease.wasm.unityweb",
+    // Unity files are requested by the loader with a version query string.
+    // Prefetching them here would download the same 36 MB again on first visit.
     "TemplateData/style.css",
     "StreamingAssets/TileRushPromo/banner-layout.css",
     "StreamingAssets/TileRushPromo/banner-layout.js"
@@ -16,14 +14,17 @@ self.addEventListener('install', function (e) {
 
     e.waitUntil((async function () {
       const cache = await caches.open(cacheName);
-      console.log('[Service Worker] Caching all: app shell and content');
+      console.log('[Service Worker] Caching lightweight app shell');
       await cache.addAll(contentToCache);
     })());
 });
 
 self.addEventListener('fetch', function (e) {
   // Firebase rankings and authentication must always reach the server.
-  if (new URL(e.request.url).origin !== self.location.origin) return;
+  const url = new URL(e.request.url);
+  if (url.origin !== self.location.origin) return;
+  // Unity already stores the data file in its own IndexedDB cache.
+  if (url.pathname.endsWith('/WebGLRelease.data.unityweb')) return;
   if (e.request.mode === 'navigate') {
     e.respondWith((async function () {
       try {
